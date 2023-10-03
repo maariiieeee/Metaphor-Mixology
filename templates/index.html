@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6; /* Light pink background */
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #ff3366; /* Pink header text color */
+        }
+        form {
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff; /* White background for the form */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            background-color: #ff3366; /* Pink button background color */
+            color: #fff; /* White button text color */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #ff0055; /* Darker pink on hover */
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #ff3366; /* Pink header text color */
+        }
+        p {
+            text-align: center;
+            font-size: 16px;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Metaphor Mixology</h1>
+    <form method="POST">
+        <label for="ingredients">What's in your fridge?</label>
+        <input type="text" id="ingredients" name="ingredients" required>
+        <button type="submit">Generate Recipe</button>
+    </form>
+    {% if recipe %}
+    <h2>Recipe Title:</h2>
+    <p>{{ title }}</p>
+
+    <h2>Generated Recipe:</h2>
+    <p>{{ recipe }}</p>
+
+    <h2>Recipe Picture:</h2>
+    <img src="{{ image_url }}" alt="Recipe Image" width="300">
+    {% endif %}
+</body>
+</html>
+
+
